@@ -5,6 +5,7 @@ const bars = [
   {
     key: "bar1",
     color: "green",
+    innerHtml: "test",
     from: {
       width: "0px"
     },
@@ -55,9 +56,12 @@ const BarGraph = () => {
         ...spring,
         height: "20px",
         marginBottom: "10px",
-        backgroundColor: bars[index].color
+        backgroundColor: bars[index].color,
+        transform: "translate3d(0,555px,100)"
       }}
-    />
+    >
+      {bars[index].key}
+    </a.div>
   ));
 };
 
