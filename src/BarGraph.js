@@ -4,8 +4,9 @@ import { useSprings, animated as a } from "react-spring";
 const bars = [
   {
     key: "bar1",
+    test: "test",
     color: "green",
-    innerHtml: "test",
+    linearGradient: ("to right", "red", "blue"),
     from: {
       width: "0px"
     },
@@ -39,7 +40,7 @@ const bars = [
       width: "150px"
     },
     config: {
-      mass: 13
+      mass: 133
     }
   }
 ];
@@ -52,15 +53,15 @@ const BarGraph = () => {
 
   return springs.map((spring, index) => (
     <a.div
+      key={bars[index].key}
       style={{
         ...spring,
         height: "20px",
         marginBottom: "10px",
-        backgroundColor: bars[index].color,
-        transform: "translate3d(0,555px,100)"
+        backgroundColor: bars[index].color
       }}
     >
-      {bars[index].key}
+      {bars[index].innerHTML}
     </a.div>
   ));
 };
